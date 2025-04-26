@@ -74,6 +74,7 @@ function Main() {
   return (
     
     <div>
+        <h2>Welcome to GeoGuessr!</h2>
         <div>
           {!isVisibleI && <img src={images[currentImg]} alt="didn't work :/" width="500px" height="667"/>}
           {isVisibleI && <img src={img9} alt="didn't work :/" width="500px" height="667"/>}
