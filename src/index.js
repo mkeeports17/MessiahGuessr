@@ -26,7 +26,6 @@ function Main() {
   const [isVisibleI, setIsVisibleI] = useState(false);
 
 
-
   useEffect(() => {const timeoutId = setTimeout(() => {setIsVisibleE(false);}, 2000);
     return () => clearTimeout(timeoutId);}, [isVisibleE]);
   useEffect(() => {const timeoutId = setTimeout(() => {setIsVisibleC(false);}, 2000);
@@ -75,11 +74,11 @@ function Main() {
     
     <div>
         <h2>Welcome to GeoGuessr!</h2>
-        <div>
+        <div style={{paddingLeft:"10px"}}>
           {!isVisibleI && <img src={images[currentImg]} alt="didn't work :/" width="500px" height="667"/>}
           {isVisibleI && <img src={img9} alt="didn't work :/" width="500px" height="667"/>}
         </div>
-        <img src={map} alt="didn't work :/" useMap="#campusmap" width="731px" height="550px"/>
+        <img  style={{paddingLeft:"10px"}} src={map} alt="didn't work :/" useMap="#campusmap" width="731px" height="550px"/>
           <map name="campusmap">
             <button style={{display:"none"}} onClick={() => handleClick(0)}> <area shape="circle" coords="330,450,15"/></button>
             <button style={{display:"none"}} onClick={() => handleClick(1)}> <area shape="circle" coords="490,300,20"/></button>
@@ -95,8 +94,8 @@ function Main() {
           <div className="org" id="firstdiv">
             <h3>Image {currentImg+1} of 9</h3>
             <h3>{score} out of {currentImg} correct!</h3>
-            //style for this special button received from the following resource
-            //https://webdeasy.de/en/top-css-buttons-en/
+            {/* style for this special button received from the following resource
+            https://webdeasy.de/en/top-css-buttons-en/ */}
             <button className="special" onClick={nextImg}>Skip Image</button>
           </div>
           <div className="org">
